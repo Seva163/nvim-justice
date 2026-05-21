@@ -8,6 +8,7 @@ M.setup = function(userConfig) require("justice.config").setup(userConfig) end
 
 ---@class Justice.RunOptions
 ---@field justfile? string
+---@field ignore_errors? boolean
 
 ---@param opts? Justice.RunOptions
 M.select = function(opts)

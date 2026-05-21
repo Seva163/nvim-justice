@@ -76,7 +76,9 @@ function M.get(opts)
 	}
 	local result = vim.system(args1):wait()
 	if result.code ~= 0 then
-		notify(result.stderr, "error")
+		if not opts.ignore_errors then
+			notify(result.stderr, "error")
+		end
 		return
 	end
 	local recipesInOrder = vim.split(vim.trim(result.stdout), " ")
